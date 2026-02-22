@@ -1,30 +1,33 @@
-.favorites {
+.favorites,
+.favorites-empty {
   padding: 2rem;
-  width: 100%;
   box-sizing: border-box;
+  text-align: center;
 }
 
-.favorites h2 {
+.favorites h2,
+.favorites-empty h2 {
   margin-bottom: 2rem;
   text-align: center;
   font-size: 2.5rem;
-  color: #ffffff;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+}
+
+.favorites h2 {
+  color: #fff; /* white title for main favorites section */
 }
 
 .favorites-empty {
-  text-align: center;
-  padding: 4rem 2rem;
-  background-color: rgba(255, 255, 255, 0.05);
+  background-color: rgba(255,255,255,0.05);
   border-radius: 12px;
   margin: 2rem auto;
   max-width: 600px;
 }
 
 .favorites-empty h2 {
+  font-size: 2rem; 
+  color: #e50914; /* red title for empty message */
   margin-bottom: 1rem;
-  font-size: 2rem;
-  color: #e50914;
 }
 
 .favorites-empty p {
@@ -33,20 +36,38 @@
   line-height: 1.6;
 }
 
+.favorite-btn {
+  position: absolute;      /* float inside card */
+  top: 10px;               /* top-right corner */
+  right: 10px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: none;            /* remove default button border */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(0,0,0,0.6);
+  color: #fff;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  z-index: 2;
+}
 
-/* Animation for new favorites being added */
+.favorite-btn:hover {
+  background-color: rgba(0,0,0,0.85);
+}
+
+.favorite-btn.active {
+  color: #ff4757;
+}
+
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .movies-grid > * {
   animation: fadeIn 0.3s ease-out forwards;
 }
-

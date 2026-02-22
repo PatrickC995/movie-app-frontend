@@ -13,19 +13,22 @@ function MovieCard({ movie }) {
 
   return (
     <div className="movie-card">
+      {/* ✅ MOVE BUTTON HERE (outside overlay) */}
+      <button
+        className={`favorite-btn ${favorite ? "active" : ""}`} // ✅ added missing space
+        onClick={onFavoriteClick}
+      >
+        {favorite ? "❤️" : "🤍"}
+      </button>
+
       <div className="movie-poster">
         <img
           src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
           alt={movie.title}
         />
-        <div className="movie-overlay">
-          <button
-            className={`favorite-btn${favorite ? "active" : ""}`}
-            onClick={onFavoriteClick}
-          >
-            {favorite ? "❤️" : "🤍"}
-          </button>
-        </div>
+
+        {/* Overlay stays, but WITHOUT button */}
+        <div className="movie-overlay"></div>
       </div>
 
       <div className="movie-info">
