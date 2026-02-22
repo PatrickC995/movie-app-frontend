@@ -1,3 +1,14 @@
+# React-Movie-App-Frontend
+
+This repository showcases the frontend for a movie application. The app fetches popular movies through an API, allowing users to search, favorite, and rank their favorite films.
+
+Through this project, I’ve gained hands-on experience with JavaScript, HTML, CSS and helped me develope fundamentals, including:
+
+- Building reusable components
+- Making API calls
+- Securely managing API keys
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
