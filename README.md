@@ -8,6 +8,13 @@ Through this project, I’ve gained hands-on experience with JavaScript, HTML, C
 - Making API calls
 - Securely managing API keys
 
+### Node.js packages
+- Express: I used Express to create routes in my server so it can respond to HTTP requests
+- CORS: I added CORS middleware to my Express app so my frontend on a different domain can access the API
+- Dotenv: I used Dotenv to load my API key from a .env file instead of hardcoding them
+- Axios: I used Axios to send HTTP requests from my backend to fetch data from an API.
+
+> Note: The API key used to make these API calls was provided by The Movie Database (TMDb). You can create a free account on their platform to obtain your own API key.
 
 # React + Vite
 
