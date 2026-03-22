@@ -42,7 +42,6 @@
   object-fit: cover;
 }
 
-
 /* Overlay */
 .movie-overlay {
   position: absolute;
@@ -84,4 +83,19 @@
 .movie-info p {
   color: #999;
   font-size: 0.85rem;
+}
+
+.star-rating {
+  display: flex;
+  gap: 0.2rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.star {
+  color: #ccc;
+}
+
+.star.filled {
+  color: gold;
 }
