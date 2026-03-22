@@ -1,12 +1,22 @@
 import "../css/MovieCard.css";
 import { useMovieContext } from "../contexts/MovieContext";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import StarRating from "./StarRating";
 
 function MovieCard({ movie }) {
-  const { isFavorite, addToFavorites, removeFromFavorites } = useMovieContext();
+  const {
+    isFavorite,
+    addToFavorites,
+    removeFromFavorites,
+    getRating,
+    setRating,
+  } = useMovieContext();
   const favorite = isFavorite(movie.id);
-  const [rating, setRating] = useState(0);
+  const [rating, setLocalRating] = useState(0);
+
+  useEffect(() => {
+    setLocalRating(getRating(movie.id));
+  }, [movie.id, getRating]);
 
   function onFavoriteClick(e) {
     e.preventDefault();
@@ -15,8 +25,8 @@ function MovieCard({ movie }) {
   }
 
   function handleRatingChange(newRating) {
-    setRating(newRating);
-    // TODO: If you want to persist the rating, call a function from your context here
+    setLocalRating(newRating);
+    setRating(movie.id, newRating);
   }
 
   return (
